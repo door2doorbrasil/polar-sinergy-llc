@@ -34,7 +34,8 @@ def request(method: str, path: str, payload: dict[str, Any] | None = None) -> An
     url = f"{API_BASE}{path}"
     headers = {
         "Authorization": f"Bearer {TOKEN}",
-        "Accept": "application/json",
+        "Accept": "application/json, */*",
+        "User-Agent": "curl/8.0.0",
     }
     data = None
     if payload is not None:
