@@ -25,7 +25,7 @@ jobs:
           HOSTINGER_VPS_ID: "1783294"
           HOSTINGER_REPO_URL: https://github.com/${{ github.repository }}
           HOSTINGER_PROJECT_NAME: polar-sinergy
-          HOSTINGER_SMOKE_URL: https://hermes.polarsinergy.com
+          HOSTINGER_SMOKE_URL: http://2.24.215.223:18080
           HOSTINGER_PURGE_ALL: "1"
         run: |
           python3 deploy/hostinger/deploy.py
