@@ -22,10 +22,10 @@ jobs:
       - name: Deploy through Hostinger API
         env:
           HOSTINGER_API_TOKEN: ${{ secrets.HOSTINGER_API_TOKEN }}
-          HOSTINGER_VPS_ID: ${{ secrets.HOSTINGER_VPS_ID }}
+          HOSTINGER_VPS_ID: "1783294"
           HOSTINGER_REPO_URL: https://github.com/${{ github.repository }}
-          HOSTINGER_PROJECT_NAME: ${{ secrets.HOSTINGER_PROJECT_NAME }}
-          HOSTINGER_SMOKE_URL: ${{ secrets.HOSTINGER_SMOKE_URL }}
+          HOSTINGER_PROJECT_NAME: polar-sinergy
+          HOSTINGER_SMOKE_URL: https://hermes.polarsinergy.com
           HOSTINGER_PURGE_ALL: "1"
         run: |
           python3 deploy/hostinger/deploy.py
