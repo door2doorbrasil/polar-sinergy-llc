@@ -76,11 +76,17 @@ def deploy_project() -> None:
     )
 
 
-def project_details() -> dict[str, Any]:
-    for project in get_projects():
-        if project.get("name") == PROJECT_NAME:
-            return project
+def wait_for_project() -> dict[str, Any]:
+    for _ in range(POLL_ATTEMPTS):
+        for project in get_projects():
+            if project.get("name") == PROJECT_NAME:
+                return project
+        time.sleep(POLL_SECONDS)
     fail(f"Project {PROJECT_NAME!r} not found after deployment")
+
+
+def project_details() -> dict[str, Any]:
+    return wait_for_project()
 
 
 def project_containers() -> list[dict[str, Any]]:
