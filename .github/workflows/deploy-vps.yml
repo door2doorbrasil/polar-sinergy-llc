@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - master
   workflow_dispatch:
 
 concurrency:
@@ -18,39 +19,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Prepare SSH
-        run: |
-          install -m 700 -d ~/.ssh
-          printf '%s\n' "${{ secrets.VPS_SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -p "${{ secrets.VPS_SSH_PORT || 22 }}" -H "${{ secrets.VPS_HOST }}" >> ~/.ssh/known_hosts
-
-      - name: Sync repository
+      - name: Deploy through Hostinger API
         env:
-          VPS_HOST: ${{ secrets.VPS_HOST }}
-          VPS_PORT: ${{ secrets.VPS_SSH_PORT || 22 }}
-          VPS_USER: ${{ secrets.VPS_USER }}
-          VPS_PATH: ${{ secrets.VPS_PATH }}
+          HOSTINGER_API_TOKEN: ${{ secrets.HOSTINGER_API_TOKEN }}
+          HOSTINGER_VPS_ID: ${{ secrets.HOSTINGER_VPS_ID }}
+          HOSTINGER_REPO_URL: https://github.com/${{ github.repository }}
+          HOSTINGER_PROJECT_NAME: ${{ secrets.HOSTINGER_PROJECT_NAME }}
+          HOSTINGER_SMOKE_URL: ${{ secrets.HOSTINGER_SMOKE_URL }}
+          HOSTINGER_PURGE_ALL: "1"
         run: |
-          : "${VPS_PATH:?Set VPS_PATH in GitHub secrets}"
-          ssh -p "$VPS_PORT" "$VPS_USER@$VPS_HOST" "mkdir -p '$VPS_PATH'"
-          rsync -az --delete \
-            --exclude '.git/' \
-            --exclude '.github/' \
-            --exclude 'deploy/vps/bootstrap-zero.sh' \
-            --exclude 'hermes-full-backup/' \
-            --exclude 'local-hermes/' \
-            --exclude '*.tar.gz' \
-            --exclude '.env' \
-            --exclude '.env.*' \
-            ./ "$VPS_USER@$VPS_HOST:$VPS_PATH/"
-
-      - name: Deploy and smoke test
-        env:
-          VPS_HOST: ${{ secrets.VPS_HOST }}
-          VPS_PORT: ${{ secrets.VPS_SSH_PORT || 22 }}
-          VPS_USER: ${{ secrets.VPS_USER }}
-          VPS_PATH: ${{ secrets.VPS_PATH }}
-        run: |
-          ssh -p "$VPS_PORT" "$VPS_USER@$VPS_HOST" \
-            "cd '$VPS_PATH' && HOST_PORT=80 sh deploy/vps/deploy.sh"
+          python3 deploy/hostinger/deploy.py
