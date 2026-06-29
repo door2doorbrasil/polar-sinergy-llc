@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Polar Sinergy LLC">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dff4ff"/>
+      <stop offset="55%" stop-color="#7bd0ff"/>
+      <stop offset="100%" stop-color="#d5b37a"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="32" fill="#0b1728"/>
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#g)"/>
+  <path d="M33 34h26c12 0 20 7 20 18 0 8-4 14-11 17l16 25H61L48 72H44v22H33V34Zm11 9v20h14c7 0 11-4 11-10s-4-10-11-10H44Z" fill="#08111e"/>
+</svg>

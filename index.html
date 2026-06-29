@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polar Sinergy LLC | Global Trading Company</title>
+    <meta
+      name="description"
+      content="Polar Sinergy LLC is a Tampa, Florida trading company for chemicals, food ingredients, industrial machinery, and commercial intelligence."
+    />
+    <meta
+      name="keywords"
+      content="trading company, chemicals, food ingredients, industrial machinery, Tampa Florida, export, import"
+    />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home">
+        <span class="brand-mark">PS</span>
+        <span>
+          <strong>Polar Sinergy LLC</strong>
+          <small>Tampa, Florida</small>
+        </span>
+      </a>
+
+      <nav class="nav">
+        <a href="#solutions" data-i18n="navSolutions"></a>
+        <a href="#products" data-i18n="navProducts"></a>
+        <a href="#intelligence" data-i18n="navIntelligence"></a>
+        <a href="#contact" data-i18n="navContact"></a>
+      </nav>
+
+      <div class="lang-switch" aria-label="Language selector">
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="pt">PT</button>
+        <button type="button" data-lang="es">ES</button>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero section reveal">
+        <div class="hero-copy">
+          <div class="eyebrow" data-i18n="heroEyebrow"></div>
+          <h1 data-i18n="heroTitle"></h1>
+          <p class="lead" data-i18n="heroLead"></p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact" data-i18n="heroCtaPrimary"></a>
+            <a class="btn btn-secondary" href="#products" data-i18n="heroCtaSecondary"></a>
+          </div>
+
+          <dl class="stats">
+            <div>
+              <dt data-i18n="stat1Label"></dt>
+              <dd data-i18n="stat1Value"></dd>
+            </div>
+            <div>
+              <dt data-i18n="stat2Label"></dt>
+              <dd data-i18n="stat2Value"></dd>
+            </div>
+            <div>
+              <dt data-i18n="stat3Label"></dt>
+              <dd data-i18n="stat3Value"></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-visual">
+          <figure class="hero-card hero-card-main">
+            <img src="./assets/hero-clean.png" alt="Clean export warehouse and logistics scene" />
+            <figcaption data-i18n="heroImageCaption"></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section intro reveal">
+        <div class="section-heading">
+          <span class="eyebrow" data-i18n="introEyebrow"></span>
+          <h2 data-i18n="introTitle"></h2>
+        </div>
+        <p class="section-text" data-i18n="introBody"></p>
+        <div class="pill-row" id="pillRow"></div>
+      </section>
+
+      <section id="solutions" class="section cards reveal">
+        <article class="info-card">
+          <span class="card-kicker" data-i18n="solution1Kicker"></span>
+          <h3 data-i18n="solution1Title"></h3>
+          <p data-i18n="solution1Body"></p>
+        </article>
+        <article class="info-card">
+          <span class="card-kicker" data-i18n="solution2Kicker"></span>
+          <h3 data-i18n="solution2Title"></h3>
+          <p data-i18n="solution2Body"></p>
+        </article>
+        <article class="info-card">
+          <span class="card-kicker" data-i18n="solution3Kicker"></span>
+          <h3 data-i18n="solution3Title"></h3>
+          <p data-i18n="solution3Body"></p>
+        </article>
+      </section>
+
+      <section id="products" class="section split reveal">
+        <div class="split-copy">
+          <span class="eyebrow" data-i18n="productsEyebrow"></span>
+          <h2 data-i18n="productsTitle"></h2>
+          <p class="section-text" data-i18n="productsBody"></p>
+        </div>
+
+        <div class="product-panels">
+          <article class="panel">
+            <h3 data-i18n="chemicalsTitle"></h3>
+            <ul id="chemicalsList"></ul>
+          </article>
+          <article class="panel">
+            <h3 data-i18n="foodTitle"></h3>
+            <ul id="foodList"></ul>
+          </article>
+          <article class="panel panel-accent">
+            <h3 data-i18n="machineryTitle"></h3>
+            <ul id="machineryList"></ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="intelligence" class="section intelligence reveal">
+        <div class="section-heading">
+          <span class="eyebrow" data-i18n="intelEyebrow"></span>
+          <h2 data-i18n="intelTitle"></h2>
+        </div>
+        <div class="intelligence-grid">
+          <article class="metric-card">
+            <h3 data-i18n="intel1Title"></h3>
+            <p data-i18n="intel1Body"></p>
+          </article>
+          <article class="metric-card">
+            <h3 data-i18n="intel2Title"></h3>
+            <p data-i18n="intel2Body"></p>
+          </article>
+          <article class="metric-card">
+            <h3 data-i18n="intel3Title"></h3>
+            <p data-i18n="intel3Body"></p>
+          </article>
+          <article class="metric-card">
+            <h3 data-i18n="intel4Title"></h3>
+            <p data-i18n="intel4Body"></p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact reveal">
+        <div class="contact-card">
+          <span class="eyebrow" data-i18n="contactEyebrow"></span>
+          <h2 data-i18n="contactTitle"></h2>
+          <p data-i18n="contactBody"></p>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:sales@polarsinergy.com">sales@polarsinergy.com</a>
+            <a class="btn btn-secondary" href="#home" data-i18n="backToTop"></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        <strong>Polar Sinergy LLC</strong>
+        <span data-i18n="footerLine"></span>
+      </p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
